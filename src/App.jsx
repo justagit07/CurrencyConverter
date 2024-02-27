@@ -49,7 +49,7 @@ function App() {
                     }}
                 >
 
-                <Inputbox label='from'  onAmountChange={(amount) => setamount(amount)} amount={amount} currencyOptions={options} onCurrencyChange={(currency)=> setamount(amount)}  selectCurrency={from}/> 
+                <Inputbox label='from'  onAmountChange={(amount) => setamount(amount)} amount={amount} currencyOptions={options} onCurrencyChange={(currency)=> {setamount(amount); setfrom(currency)}}  selectCurrency={from}/> 
                 
 
                         <div className=' relative   w-full h-[100px] '>
@@ -58,7 +58,7 @@ function App() {
                            </div>
 
              <div className='bg-red  flex  p-10  rounded-xl  w-[40vw] h-[200px]'  >
-             <Inputbox label='to' amount={convertAmount} currencyOptions={options} selectCurrency={from} onCurrencyChange={(currency)=> setto(currency)} selectCurrency={to} /> 
+             <Inputbox label='to' amount={convertAmount} currencyOptions={options} onCurrencyChange={(currency)=> setto(currency)} selectCurrency={to} /> 
 
              </div>
               <button type='submit' className='bg-blue-700 ml-[200px] rounded-md w-[200px] h-12' onClick={convert}> Convert {from} to {to}</button>

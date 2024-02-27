@@ -8,7 +8,7 @@ function Inputbox(
         onAmountChange,
         onCurrencyChange,
         currencyOptions=[],
-        selectCurrency='eur',
+        selectCurrency,
         className='',
         amoutDissable=false,
         currencyDissable=false, 
@@ -26,7 +26,7 @@ function Inputbox(
             </div>
             <div className=" w-1/2  flex text-black flex-wrap justify-end text-right">
                       <p className="w-full  text-2xl "> currency Type </p>
-                <select   value={selectCurrency} defaultValue={"inr"} onChange={(e)=>onCurrencyChange && onCurrencyChange(e.target.value)} className="w-[100px] h-9  text-black rounded-lg px-1 py-1 text-slate-900 cursor-pointer outline-none" >
+                <select   value={selectCurrency}  onChange={(e)=>onCurrencyChange && onCurrencyChange(e.target.value)} className="w-[100px] h-9  text-black rounded-lg px-1 py-1 text-slate-900 cursor-pointer outline-none" >
             
 
             {currencyOptions.map((e)=>
